@@ -6,35 +6,45 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/hjson/hjson-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/h/hjson/hjson-{{ version }}.tar.gz
   sha256: 55af475a27cf83a7969c808399d7bccdec8fb836a07ddbd574587593b9cdcf75
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
+  skip: true  # [py<39]
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+  entry_points:
+    - hjson = hjson.tool:main
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
+    - setuptools
   run:
-    - python >={{ python_min }}
+    - python
 
 test:
   imports:
     - hjson
   commands:
     - pip check
+    - hjson --help
   requires:
     - pip
-    - python {{ python_min }}
 
 about:
   home: http://github.com/hjson/hjson-py
-  summary: Hjson, a user interface for JSON.
-  license: Apache-2.0
+  license: MIT
+  license_family: MIT
   license_file: LICENSE.txt
+  summary: Hjson, a user interface for JSON.
+  description: |
+    Hjson is a syntax extension to JSON. It is intended to be used like a
+    user interface for humans, to read and edit before passing the JSON
+    data to the machine.
+  doc_url: https://hjson.github.io/
+  dev_url: https://github.com/hjson/hjson-py
 
 extra:
   recipe-maintainers:
