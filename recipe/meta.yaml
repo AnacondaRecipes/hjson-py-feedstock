@@ -35,7 +35,7 @@ test:
 
 about:
   home: http://github.com/hjson/hjson-py
-  license: MIT
+  license: MIT OR AFL-2.1
   license_family: MIT
   license_file: LICENSE.txt
   summary: Hjson, a user interface for JSON.
