@@ -34,7 +34,7 @@ test:
     - pip
 
 about:
-  home: http://github.com/hjson/hjson-py
+  home: https://github.com/hjson/hjson-py
   license: MIT OR AFL-2.1
   license_family: MIT
   license_file: LICENSE.txt
