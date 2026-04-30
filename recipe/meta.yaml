@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/h/hjson/hjson-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/h/hjson/hjson-{{ version }}.tar.gz
   sha256: 55af475a27cf83a7969c808399d7bccdec8fb836a07ddbd574587593b9cdcf75
 
 build:
